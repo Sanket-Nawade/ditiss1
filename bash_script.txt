@@ -1,0 +1,11 @@
+#!/bin/bash
+
+read -p "donner l UID" cheruid
+
+ if [ $(grep -w $cheruid) -n ]
+ then
+    grep -w $cheruid /etc/passwd | cut -d ":" -f "1" | xargs echo "user is : "
+else
+    echo "user not found"
+
+fi
